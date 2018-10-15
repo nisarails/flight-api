@@ -1,24 +1,35 @@
-# README
+## flight-api
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+This project was created with Ruby on Rails.
+* Used data scraping all flight departures and arrival from Copenhagen Airport's website: https://www.cph.dk/en.
+* Created ruby on rails API for getting fight information.
 
-Things you may want to cover:
+## Technical Dependency
 
-* Ruby version
+* Used `anemone` gem for scrapping along with `pg` gem for database.
 
-* System dependencies
+## Installation
 
-* Configuration
+* First take a clone of this repo.
 
-* Database creation
+  `git clone https://github.com/nisarails/flight-api.git`
 
-* Database initialization
+* Installed all dependency.
 
-* How to run the test suite
+  `bundle install`
 
-* Services (job queues, cache servers, search engines, etc.)
+* Create database.
 
-* Deployment instructions
+  `rails db:create`
 
-* ...
+* Migrate database.
+
+  `rails db:migrate`
+
+* Import data through scraping.
+
+  `rails import_flight_info:departures` and `rails import_flight_info:arrivals`
+
+* Start server.
+
+  `rails s`
